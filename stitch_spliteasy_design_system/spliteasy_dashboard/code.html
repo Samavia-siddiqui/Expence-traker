@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SplitEasy - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#17e8a6",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf9f8",
+                    "surface-container": "#f0eded",
+                    "primary-fixed": "#45ffbb",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#00e2a0",
+                    "surface-container-high": "#eae7e7",
+                    "on-tertiary-fixed": "#291800",
+                    "secondary": "#006b5d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#002114",
+                    "on-secondary-fixed": "#00201b",
+                    "on-primary-container": "#006344",
+                    "surface-dim": "#dcd9d9",
+                    "on-background": "#1c1b1b",
+                    "outline-variant": "#bacbbf",
+                    "error-container": "#ffdad6",
+                    "primary": "#006c4b",
+                    "on-surface-variant": "#3b4a42",
+                    "surface-bright": "#fcf9f8",
+                    "tertiary-fixed-dim": "#ffb952",
+                    "on-primary-fixed-variant": "#005138",
+                    "inverse-on-surface": "#f3f0ef",
+                    "tertiary-fixed": "#ffddb4",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "secondary-fixed": "#80f7e0",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#80f7e0",
+                    "on-surface": "#1c1b1b",
+                    "secondary-fixed-dim": "#62dac4",
+                    "background": "#fcf9f8",
+                    "tertiary": "#825500",
+                    "surface-tint": "#006c4b",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#ffc16a",
+                    "surface-variant": "#e5e2e1",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#784d00",
+                    "outline": "#6b7b71",
+                    "on-secondary-fixed-variant": "#005046",
+                    "primary-fixed-dim": "#00e2a0",
+                    "on-secondary-container": "#007163",
+                    "inverse-surface": "#313030",
+                    "surface-container-low": "#f6f3f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "xl": "64px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "currency-display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "currency-display": ["24px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blob-bg {
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+        }
+        .group-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 8px 30px rgba(26, 26, 26, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden">
+<!-- Atmospheric Background Blobs -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary-container rounded-full blob-bg"></div>
+<div class="absolute top-[60%] -right-[10%] w-[50%] h-[50%] bg-secondary-container rounded-full blob-bg"></div>
+<div class="absolute -bottom-[10%] left-[20%] w-[30%] h-[30%] bg-tertiary-container rounded-full blob-bg"></div>
+</div>
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 shadow-[0px_4px_20px_rgba(26,26,26,0.06)] docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-gutter py-md max-w-container-max mx-auto w-full">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">
+                SplitEasy
+            </div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-caps text-label-caps transition-colors" href="#">Groups</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Activity</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Friends</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" style="font-size: 28px;">
+                    notifications
+                </button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling young adult with a clean, modern aesthetic. The lighting is soft and high-key, matching a bright fintech app environment. The person has a friendly expression, suggesting a trustworthy and approachable user persona, set against a minimalist studio background with subtle mint-green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_8HnWLqjvBW3de07-Tc-fRgrQyvvz3uxhwCXADVqZ08LIId793xL7YUHOd4aXvarnVdvWOgiLyN-Ci5bA0xzgTlverZo_vX1qdo2gohRLfiR5TXAhNJH4sidOjK7kKDgSoyVPK84EophPS0K1TVVgBySikA6mAUK1VedqCT5kVx3OaWAZg-VARJT63sGzuV6QQ8U3Mn-4w_PYWzRdv_YuCMBzQpZFTcT_QUPe8ADiBGQEyFoy9iw6fQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-gutter py-lg">
+<!-- Heading Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-xl">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-xs">My Groups</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your shared expenses and balances.</p>
+</div>
+<button class="bg-primary-container text-on-primary-container font-bold px-md py-sm rounded-xl flex items-center gap-xs shadow-md active:scale-[0.98] transition-all hover:shadow-lg">
+<span class="material-symbols-outlined">add</span>
+<span class="font-label-caps text-label-caps">Create Group</span>
+</button>
+</div>
+<!-- Bento Grid of Group Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Card 1: Europe Trip 2024 -->
+<div class="group-card bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(26,26,26,0.06)] flex flex-col gap-md relative overflow-hidden border border-primary/5">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-primary-container/20 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+</div>
+<span class="bg-primary-container/10 text-primary px-sm py-xs rounded-full font-label-caps text-[10px]">Active</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Europe Trip 2024</h3>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">group</span>
+<span class="font-body-md text-sm">4 members</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-on-surface/[0.05]">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Balance</p>
+<p class="font-currency-display text-currency-display text-primary">You are owed $150.00</p>
+</div>
+</div>
+<!-- Card 2: Roommates -->
+<div class="group-card bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(26,26,26,0.06)] flex flex-col gap-md relative overflow-hidden border border-tertiary/5">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary-container"></div>
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-tertiary-container/20 rounded-lg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Roommates</h3>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">group</span>
+<span class="font-body-md text-sm">3 members</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-on-surface/[0.05]">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Balance</p>
+<p class="font-currency-display text-currency-display text-tertiary">You owe $45.20</p>
+</div>
+</div>
+<!-- Card 3: Weekend Brunch -->
+<div class="group-card bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(26,26,26,0.06)] flex flex-col gap-md relative overflow-hidden border border-outline-variant/20">
+<div class="absolute top-0 left-0 w-1 h-full bg-outline-variant"></div>
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Weekend Brunch</h3>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">group</span>
+<span class="font-body-md text-sm">6 members</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-on-surface/[0.05]">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Balance</p>
+<p class="font-currency-display text-currency-display text-on-surface-variant">Settled</p>
+</div>
+</div>
+<!-- Quick Add Card (Design Polish) -->
+<button class="border-2 border-dashed border-outline-variant/30 rounded-xl p-md flex flex-col items-center justify-center gap-sm text-on-surface-variant hover:border-primary-container hover:bg-primary-container/5 transition-all group min-h-[220px]">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<p class="font-headline-sm text-headline-sm">New Group</p>
+</button>
+</div>
+<!-- Hidden Empty State Reference (for logical design completeness) -->
+<!-- 
+        <div class="flex flex-col items-center justify-center py-xl text-center">
+            <span class="material-symbols-outlined text-6xl text-outline-variant/40 mb-md">groups_2</span>
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-xs">No groups yet</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-lg">Start splitting expenses with friends easily.</p>
+            <button class="bg-primary-container text-on-primary-container font-bold px-lg py-sm rounded-xl">Create your first group</button>
+        </div>
+        -->
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-base md:hidden bg-surface dark:bg-inverse-surface shadow-[0px_-4px_20px_rgba(26,26,26,0.06)] rounded-t-xl border-t border-on-surface/[0.05]">
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-2 scale-[0.95] transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-caps text-[10px] mt-1">Groups</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-caps text-[10px] mt-1">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span class="font-label-caps text-[10px] mt-1">Friends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-caps text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+<!-- Contextual FAB (Hidden on this view as per prompt focus, but added for system completeness) -->
+<div class="fixed bottom-24 right-gutter md:bottom-12 md:right-12 z-40 md:hidden">
+<button class="w-14 h-14 rounded-2xl bg-primary shadow-xl text-on-primary flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<script>
+        // Micro-interactions for the cards
+        document.querySelectorAll('.group-card').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'translateY(-4px) scale(1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body></html>

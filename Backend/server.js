@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
+import groupRoutes from './routes/groupRoutes.js';
+import expenseRoutes from './routes/expenseRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -25,6 +27,8 @@ app.use(
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/groups', groupRoutes);
+app.use('/api/expenses', expenseRoutes);
 
 // Simple Health Check
 app.get('/health', (req, res) => {

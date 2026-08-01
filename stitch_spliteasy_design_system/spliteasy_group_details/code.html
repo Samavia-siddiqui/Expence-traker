@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Europe Trip 2024 - SplitEasy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-container": "#17e8a6",
+                "error": "#ba1a1a",
+                "surface": "#fcf9f8",
+                "surface-container": "#f0eded",
+                "primary-fixed": "#45ffbb",
+                "on-tertiary": "#ffffff",
+                "inverse-primary": "#00e2a0",
+                "surface-container-high": "#eae7e7",
+                "on-tertiary-fixed": "#291800",
+                "secondary": "#006b5d",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#002114",
+                "on-secondary-fixed": "#00201b",
+                "on-primary-container": "#006344",
+                "surface-dim": "#dcd9d9",
+                "on-background": "#1c1b1b",
+                "outline-variant": "#bacbbf",
+                "error-container": "#ffdad6",
+                "primary": "#006c4b",
+                "on-surface-variant": "#3b4a42",
+                "surface-bright": "#fcf9f8",
+                "tertiary-fixed-dim": "#ffb952",
+                "on-primary-fixed-variant": "#005138",
+                "inverse-on-surface": "#f3f0ef",
+                "tertiary-fixed": "#ffddb4",
+                "on-tertiary-fixed-variant": "#633f00",
+                "secondary-fixed": "#80f7e0",
+                "surface-container-highest": "#e5e2e1",
+                "on-secondary": "#ffffff",
+                "on-error-container": "#93000a",
+                "secondary-container": "#80f7e0",
+                "on-surface": "#1c1b1b",
+                "secondary-fixed-dim": "#62dac4",
+                "background": "#fcf9f8",
+                "tertiary": "#825500",
+                "surface-tint": "#006c4b",
+                "on-primary": "#ffffff",
+                "tertiary-container": "#ffc16a",
+                "surface-variant": "#e5e2e1",
+                "on-error": "#ffffff",
+                "on-tertiary-container": "#784d00",
+                "outline": "#6b7b71",
+                "on-secondary-fixed-variant": "#005046",
+                "primary-fixed-dim": "#00e2a0",
+                "on-secondary-container": "#007163",
+                "inverse-surface": "#313030",
+                "surface-container-low": "#f6f3f2"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "container-max": "1200px",
+                "sm": "12px",
+                "md": "24px",
+                "xl": "64px",
+                "base": "8px",
+                "xs": "4px",
+                "lg": "40px"
+            },
+            "fontFamily": {
+                "currency-display": ["Inter"],
+                "headline-md": ["Inter"],
+                "headline-lg": ["Inter"],
+                "label-caps": ["Inter"],
+                "headline-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"]
+            },
+            "fontSize": {
+                "currency-display": ["24px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .soft-blob {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            border-radius: 50%;
+        }
+        .blob-1 { top: -200px; right: -100px; background: #17e8a6; }
+        .blob-2 { bottom: -200px; left: -100px; background: #80f7e0; }
+        
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.06);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+        }
+        .card-shadow:hover {
+            box-shadow: 0px 8px 30px rgba(26, 26, 26, 0.1);
+        }
+        .button-press:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<div class="soft-blob blob-1"></div>
+<div class="soft-blob blob-2"></div>
+<!-- Top Navigation Bar -->
+<header class="bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 docked full-width top-0 sticky shadow-[0px_4px_20px_rgba(26,26,26,0.06)] z-50">
+<div class="flex justify-between items-center px-gutter py-md max-w-container-max mx-auto w-full">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">SplitEasy</div>
+<nav class="hidden md:flex gap-lg">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-caps text-label-caps" href="#">Groups</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Activity</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Friends</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="px-md py-xs font-label-caps text-label-caps text-on-surface-variant">Login</button>
+<button class="bg-primary text-on-primary px-md py-sm rounded-xl font-label-caps text-label-caps hover:bg-primary/90 transition-all button-press">Sign Up</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-lg">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
+<div class="space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-4xl">flight_takeoff</span>
+<h1 class="font-headline-lg text-headline-lg">Europe Trip 2024</h1>
+</div>
+<div class="flex items-center gap-[-8px]">
+<div class="relative group">
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A close-up photographic portrait of a smiling young woman with warm brown eyes and professional lighting, set against a blurred urban sunset background. The aesthetic is clean, high-resolution, and mirrors the premium SplitEasy fintech brand colors with subtle emerald highlights. Her expression is joyful and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLiv2B7_WPkKAqypszPV3P2ZNwWvoIPxvb6DzkavVxWYLok7_bORsWDQ1YCD-bftUvk_W3X9l5okhdyy521_pPmG9zO1qCM4ciwVOIxUjjPUGK8IEdAyDiSEBi2M3_71k1XZstaZkj5V5nVvqhNIOjEXP1mPgfXCcPstwQF8K1Bp4wyT6TcbgBdBc690rx70hL61A2P3gKVgrqa4rrxdlCKmC3zfcOvDW_lXMaLklNh0SC1aZYtBBZlw"/>
+</div>
+<div class="relative group -ml-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A portrait of a young man with a friendly, approachable expression, wearing a stylish minimalist sweatshirt. The lighting is soft and directional, creating a modern, corporate yet personal feel. The color palette incorporates soft grays and minty greens, consistent with a fresh financial technology app's visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnUnKzFi9IZT-hk_Q6-jv3VGSPasE4CscNlTaXVe7oIzn9FdUf9HBjUu6CM_KgqAyzFon94f0v43WdV1ECKBfblnn4j79PBW-AeUl6abY3KKz3no5pRq_QUyfxysVfOqNLXKxKA7_orYzXAVwtRL6tB-lxmUa6qY63pGKBKSVHSgBzjpedUNvQuYm_nrThO36AY1lnEGF9xFPaugixT3P7xtlt0HMyPV-goWEy6h0W2zH12gdM1c9kIQ"/>
+</div>
+<div class="relative group -ml-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A bright and vibrant portrait of a woman with a confident smile, captured in a bright studio setting with high-key lighting. The style is contemporary and professional, featuring clean lines and a polished look that fits a social expense-sharing platform. Accents of soft teal are visible in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQfV2uVmXZL1UqszEGpMrawbvxA9fL5IXQ46aH-Qt5bg6q9yLNR404FBkDb6P6VUl-ALKTABIGBEQeVR_UxLiQbEK1KTzlZhFwy_tv0GdozYYpllpK1DXOSuVgLCGI3DUSi6TQKsyCHTsy318TbGEy2hzQWlArXzjenkCZSn5WC7ow8seiS5RnJWJI4oKSKpKANK7sHOdVGQEfiCuDjpbnOiBIT38aISoGgNgjkRAYVSdrOSbdZoxiGA"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center -ml-3 z-10">
+<span class="text-label-caps font-bold text-on-surface-variant">+2</span>
+</div>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-xs bg-primary-container text-[#1a1a1a] px-lg py-md rounded-xl font-headline-sm text-headline-sm button-press transition-all shadow-lg shadow-primary-container/20">
+<span class="material-symbols-outlined">add</span>
+                    Add Expense
+                </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-xs bg-secondary-container text-[#1a1a1a] px-lg py-md rounded-xl font-headline-sm text-headline-sm button-press transition-all shadow-md">
+<span class="material-symbols-outlined">payments</span>
+                    Settle Up
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
+<!-- Sidebar Widgets -->
+<aside class="lg:col-span-4 space-y-lg">
+<!-- Balance Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl card-shadow border border-primary/10">
+<div class="flex items-center justify-between mb-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Balance Summary</span>
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+</div>
+<div class="space-y-xs">
+<p class="font-body-md text-body-md text-on-surface-variant">Overall, you are owed</p>
+<div class="flex items-baseline gap-xs">
+<span class="font-currency-display text-currency-display text-primary font-bold text-4xl">$150.00</span>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-on-surface/5 space-y-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">person</span>
+</div>
+<span class="font-body-md text-body-md">John owes you</span>
+</div>
+<span class="font-bold text-primary">$80.00</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm">person</span>
+</div>
+<span class="font-body-md text-body-md">Sarah owes you</span>
+</div>
+<span class="font-bold text-primary">$70.00</span>
+</div>
+</div>
+</div>
+<!-- Bento-style Small Widget -->
+<div class="bg-primary/5 p-md rounded-xl border border-primary/10 card-shadow">
+<div class="flex items-center gap-sm mb-sm">
+<div class="p-2 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-[#1a1a1a]">trending_up</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Total Group Spend</h3>
+</div>
+<p class="font-currency-display text-currency-display text-primary">$1,240.50</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">This month</p>
+</div>
+</aside>
+<!-- Main Expense Feed -->
+<section class="lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl card-shadow border border-on-surface/5 overflow-hidden">
+<div class="px-md py-md border-b border-on-surface/5 flex justify-between items-center bg-surface-bright">
+<h2 class="font-headline-sm text-headline-sm">Recent Expenses</h2>
+<button class="text-primary font-label-caps text-label-caps flex items-center gap-xs">
+                            View All <span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+<div class="divide-y divide-on-surface/5">
+<!-- Expense Item 1 -->
+<div class="p-md hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">train</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-xs">Train Tickets</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                            Paid by <span class="font-bold text-on-surface">John</span> • Yesterday
+                                        </p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-currency-display text-currency-display text-on-surface">$80.00</div>
+<span class="font-label-caps text-[10px] text-error uppercase tracking-tighter">You owe $20.00</span>
+</div>
+</div>
+</div>
+<!-- Expense Item 2 -->
+<div class="p-md hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-xs">Dinner</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                            Paid by <span class="font-bold text-on-surface">Me</span> • 2 days ago
+                                        </p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-currency-display text-currency-display text-on-surface">$120.00</div>
+<span class="font-label-caps text-[10px] text-primary uppercase tracking-tighter">You lent $90.00</span>
+</div>
+</div>
+</div>
+<!-- Expense Item 3 (Additional for visual richness) -->
+<div class="p-md hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">hotel</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-xs">Airbnb Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                            Paid by <span class="font-bold text-on-surface">Sarah</span> • 4 days ago
+                                        </p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-currency-display text-currency-display text-on-surface">$450.00</div>
+<span class="font-label-caps text-[10px] text-error uppercase tracking-tighter">You owe $112.50</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-base md:hidden bg-surface dark:bg-inverse-surface rounded-t-xl shadow-[0px_-4px_20px_rgba(26,26,26,0.06)]">
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-2 scale-[0.95] transition-all">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-caps text-label-caps mt-1">Groups</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-caps text-label-caps mt-1">Activity</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<span class="font-label-caps text-label-caps mt-1">Friends</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</div>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.card-shadow').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Simple currency formatting animation for the balance
+        const balanceElement = document.querySelector('.text-currency-display');
+        if (balanceElement) {
+            let val = 0;
+            const target = 150.00;
+            const duration = 1000;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = (progress * target).toFixed(2);
+                balanceElement.textContent = `$${current}`;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
+    </script>
+</body></html>
