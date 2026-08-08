@@ -4,6 +4,7 @@ import {
   getGroups,
   getGroupById,
   joinGroup,
+  addMemberByEmail,
 } from '../controllers/groupController.js';
 import { protect } from '../middleware/authMiddleware.js';
 
@@ -16,5 +17,6 @@ router.post('/', createGroup);
 router.get('/', getGroups);
 router.post('/join', joinGroup);
 router.get('/:id', getGroupById);
+router.post('/:id/members', addMemberByEmail);
 
 export default router;
